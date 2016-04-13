@@ -9,6 +9,7 @@ C = 1.0
 DT = 0.005
 ITMAX = 500 
 DEBUG = True
+AXISRANGE = 0.0, 1.0, -2.0, 2.0
 
 # i    i+1   i+2   i+3  <-- face
 # +-----+-----+-----+
@@ -283,6 +284,7 @@ def Plot(cells, U):
 	XX, UU = ReconstructCellUs(cells, U)
 	PlotLoop.Clear()
 	PlotLoop.GetPlot().plot(XX, UU)
+	PlotLoop.GetPlot().axis(AXISRANGE)
 	PlotLoop.Draw()
 
 def Init(U):
